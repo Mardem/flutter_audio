@@ -13,7 +13,7 @@ class HomeDI extends BaseServiceLocator {
   Future<void> setServices() async {
     inject.registerFactory<MqttRepository>(
       () => MqttFactory.create(
-        server: 'test.mosquitto.org',
+        server: 'broker.emqx.io',
         clientIdentifier:
             'flutter_client_${DateTime.now().millisecondsSinceEpoch}',
       ),

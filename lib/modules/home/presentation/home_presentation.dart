@@ -75,11 +75,7 @@ class _HomePresentationState extends State<HomePresentation> {
               ValueListenableBuilder<String>(
                 valueListenable: _mqttRepo.lastMessage,
                 builder: (BuildContext context, String? value, _) {
-                  final Map<String, dynamic> content = _convertMessage(
-                    content: value ?? '',
-                  );
-
-                  return Text(content['conteudo'] ?? '----');
+                  return Text(value?.toString() ?? '');
                 },
               ),
             ],
